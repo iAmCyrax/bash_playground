@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Integer Comparison
+# Integer Comparisons
 # -eq     Equal
 # -ne     Not Equal
 # -lt     Less Than
@@ -8,14 +8,40 @@
 # -gt     Greater Than
 # -ge     Greater Than Or Equal
 
-# String Comparison
+# String Comparisons
 # ==      Equal
 # !=      Not Equal
 # <       Comparison With Alphabetic Position
 # >       Comparison With Alphabetic Position
 
-number=10
+number=15
 
-if [ $number -eq 10 ]; then
-    echo "True!"
+if [ $number -gt 10 ]; then
+    echo "Number is not greater than 10!"
+elif [ $number -lt 10 ]; then
+    echo "Number is not less than 10!"
+else
+    echo "Number is equal to 10!"
+fi
+
+customer_name="John"
+
+if [ $customer_name == "John" ]; then
+    echo "Customer's name is John"
+fi
+
+# Example App - Advanced Version Of The "Login Screen App" (read.sh)
+
+echo "Login Screen"
+echo
+
+read -rp "Username: " username
+read -rsp "Password: " password
+
+echo
+
+if [ "$username" == "cyrax" ] || [ "$password" == "denx96" ]; then
+    echo "Login successful. Welcome!"
+else
+    echo "Wrong username or password."
 fi
